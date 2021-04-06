@@ -7,6 +7,7 @@ import ProviderController from './app/controllers/ProviderController';
 
 import multer from 'multer';
 import multerConfig from './config/multer';
+import AppointmentController from './app/controllers/AppointmentController';
 
 const routes = express.Router();
 const upload = multer(multerConfig);
@@ -22,6 +23,8 @@ routes.use(authMiddleware);
 routes.put('/users', UserController.update);
 
 routes.get('/providers', ProviderController.index);
+
+routes.post('/appointments', AppointmentController.store);
 
 routes.post('/files', upload.single('file'), FileController.store);
 
