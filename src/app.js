@@ -1,3 +1,5 @@
+import 'dotenv/config';
+
 import express from 'express';
 import path from 'path';
 import Youch from 'youch';
@@ -8,6 +10,7 @@ import './database';
 
 class App {
 	constructor() {
+		//-- process.env.
 		this.server = express();
 		this.middlewares();
 		this.routes();
