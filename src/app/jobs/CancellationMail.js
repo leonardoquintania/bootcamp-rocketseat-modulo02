@@ -13,7 +13,7 @@ class CancellationMail {
 
 		console.log('Executou a fila');
 
-		await Mail.seendMail({
+		await Mail.sendMail({
 			to: `${appointment.provider.name} <${appointment.provider.email}>`,
 			subject: 'Agendamento Cancelado',
 			template: 'cancellation',
